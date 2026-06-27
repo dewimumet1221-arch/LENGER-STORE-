@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>LENGER STORE ULTIMATE X</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;scroll-behavior:smooth}
+body{background:#050b18;color:#fff;overflow-x:hidden}
+#loader{position:fixed;inset:0;background:#050b18;display:flex;justify-content:center;align-items:center;z-index:9999}
+.spin{width:120px;height:120px;border:8px solid #00aaff;border-top:8px solid transparent;border-radius:50%;animation:rot 1s linear infinite;box-shadow:0 0 40px #00aaff}
+@keyframes rot{to{transform:rotate(360deg)}}
+header{position:sticky;top:0;background:rgba(0,0,0,.9);backdrop-filter:blur(8px);padding:15px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #00aaff;z-index:100}
+.logo{font-size:32px;font-weight:bold;color:#00aaff;text-shadow:0 0 15px #00aaff}
+nav a{color:#fff;text-decoration:none;margin:0 10px}
+.hero{text-align:center;padding:90px 20px;background:linear-gradient(135deg,#07152f,#0d6efd)}
+.hero h1{text-shadow:0 0 25px #00aaff}
+.badge{display:inline-block;padding:10px 20px;background:#0f1930;border-radius:30px;margin:10px}
+.dot{display:inline-block;width:12px;height:12px;background:#0f0;border-radius:50%;box-shadow:0 0 10px #0f0}
+.container{max-width:1100px;margin:auto;padding:25px}
+.card{background:#10182d;padding:20px;border-radius:20px;margin-bottom:20px;border:1px solid #173867}
+.item{display:flex;justify-content:space-between;padding:15px 0;border-bottom:1px solid #233}
+.buy{background:#25D366;color:#fff;padding:10px 15px;text-decoration:none;border-radius:10px}
+.title{text-align:center;color:#00aaff;margin-bottom:15px}
+.review{background:#0d1324;padding:12px;border-radius:10px;margin:10px 0}
+input,textarea{width:100%;padding:12px;margin:8px 0;background:#0d1324;color:#fff;border:1px solid #00aaff;border-radius:10px}
+button{padding:12px;background:#00aaff;color:#fff;border:none;border-radius:10px;width:100%}
+#auth{min-height:100vh;display:flex;justify-content:center;align-items:center}
+.box{background:#10182d;padding:30px;border-radius:20px;width:90%;max-width:420px}
+#main{display:none}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px}
+.stat{background:#0d1324;padding:20px;border-radius:15px;text-align:center}
+footer{text-align:center;padding:30px;color:#999}
+@media(max-width:700px){header,.item{flex-direction:column;text-align:center}}
+
+#particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;background:#050b18;}
+
+</style>
+</head>
+<body>
+<canvas id='particles'></canvas>
+
+
+<div id="loader"><div class="spin"></div></div>
+
+<audio id="music" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div id="auth">
+<div class="box">
+<h2 style="text-align:center">LOGIN / REGISTER</h2>
+<p style="text-align:center">Login terlebih dahulu untuk masuk.</p>
+<input id="user" placeholder="Username">
+<input id="pass" type="password" placeholder="Password">
+<button onclick="register()">Register</button><br><br>
+<button onclick="login()">Login</button>
+<p id="msg"></p>
+</div>
+</div>
+
+<div id="main">
+<header>
+<div class="logo">LENGER STORE</div>
+<nav>
+<a href="#home">Home</a>
+<a href="#price">Price</a>
+<a href="#review">Review</a>
+<a href="#discord">Discord</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<div style="font-size:100px">🛒</div>
+<h1>LENGER STORE ULTIMATE</h1>
+<p>Trusted Roblox Script Store</p>
+<div class="badge"><span class="dot"></span> Admin Online</div><br>
+<a class="buy" href="https://discord.gg/jjsxUvVCK">JOIN DISCORD</a>
+</section>
+
+<div class="container">
+<div class="card">
+<h2 class="title">STATISTIK STORE</h2>
+<div class="stats">
+<div class="stat">👥<br>500+ Customer</div>
+<div class="stat">⭐<br>4.9/5 Rating</div>
+<div class="stat">⚡<br>1-5 Menit Respon</div>
+<div class="stat">🟢<br>24/7 Online</div>
+</div>
+</div>
+
+<div class="card" id="price">
+<h2 class="title">PRICE LIST</h2>
+<div class="item"><span>FPS NO LAG - $0.60 / Rp10.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%20FPS%20NO%20LAG">BUY</a></div><div class="item"><span>FPS BOTS + BOOSTER APP - $0.60 / Rp10.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%20FPS%20BOTS%20+%20BOOSTER%20APP">BUY</a></div><div class="item"><span>AIMBOT - $0.60 / Rp10.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%20AIMBOT">BUY</a></div><div class="item"><span>SILENT AIM - TELEPORT - GOD MODE - $0.60 / Rp10.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%20SILENT%20AIM">BUY</a></div><div class="item"><span>SCRIPT 4141 - $0.60 / Rp10.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%20SCRIPT%204141">BUY</a></div><div class="item"><span>AIMBOT FULL ESP - $0.60 / Rp10.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%20AIMBOT%20FULL%20ESP">BUY</a></div><div class="item"><span>CUSTOM NAME - $0.30 / Rp5.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%20CUSTOM%20NAME">BUY</a></div><div class="item"><span>ZALDY SCRIPT - $0.30 / Rp5.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%20ZALDY%20SCRIPT">BUY</a></div><div class="item"><span>MACRO AUTO F - $0.30 / Rp5.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%20MACRO%20AUTO%20F">BUY</a></div><div class="item"><span>SLR SCRIPT - $0.60 / Rp10.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%20SLR%20SCRIPT">BUY</a></div><div class="item"><span>BIG BODY - $0.60 / Rp10.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%20BIG%20BODY">BUY</a></div><div class="item"><span>WATCH AURA KILL - $1.20 / Rp20.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%20WATCH%20AURA%20KILL">BUY</a></div><div class="item"><span>LENGER STORE SCRIPT - $0.60 / Rp10.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%20LENGER%20STORE%20SCRIPT">BUY</a></div><div class="item"><span>1M - $0.60 / Rp10.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%201M">BUY</a></div><div class="item"><span>2M - $1.20 / Rp20.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%202M">BUY</a></div><div class="item"><span>3M - $1.80 / Rp30.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%203M">BUY</a></div><div class="item"><span>4M - $2.40 / Rp40.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%204M">BUY</a></div><div class="item"><span>5M - $3.05 / Rp50.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%205M">BUY</a></div><div class="item"><span>100 SBC - $0.60 / Rp10.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%20100%20SBC">BUY</a></div><div class="item"><span>200 SBC - $1.20 / Rp20.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%20200%20SBC">BUY</a></div><div class="item"><span>300 SBC - $1.80 / Rp30.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%20300%20SBC">BUY</a></div><div class="item"><span>400 SBC - $2.40 / Rp40.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%20400%20SBC">BUY</a></div><div class="item"><span>LATEST SCRIPT MACRO - $1.20 / Rp20.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%20LATEST%20SCRIPT%20MACRO">BUY</a></div><div class="item"><span>MACRO AIM TRAINER - $0.60 / Rp10.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%20MACRO%20AIM%20TRAINER">BUY</a></div>
+</div>
+
+
+<div class="card">
+<h2 class="title">GAMEPASS VIA GIFT</h2>
+<div class="item"><span>Looting - Rp75.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%20Looting">BUY</a></div>
+<div class="item"><span>Heavy - Rp60.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%20Heavy">BUY</a></div>
+<div class="item"><span>ARP Drum - Rp80.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%20ARP%20Drum">BUY</a></div>
+<div class="item"><span>MCX Drum - Rp80.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%20MCX%20Drum">BUY</a></div>
+<div class="item"><span>Extra Card Money - Rp90.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%20Extra%20Card%20Money">BUY</a></div>
+<div class="item"><span>Extra Hot Chips Money - Rp90.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%20Extra%20Hot%20Chips%20Money">BUY</a></div>
+<div class="item"><span>Extra Safe Storage - Rp50.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin,%20saya%20ingin%20membeli%20Extra%20Safe%20Storage">BUY</a></div>
+</div>
+
+<div class="card">
+<h2 class="title">SBC SHOP</h2>
+<div class="item"><span>100 SBC - Rp2.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin.%20saya%20ingin%20membeli%20100%20SBC">BUY</a></div>
+<div class="item"><span>200 SBC - Rp4.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin.%20saya%20ingin%20membeli%20200%20SBC">BUY</a></div>
+<div class="item"><span>300 SBC - Rp6.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin.%20saya%20ingin%20membeli%20300%20SBC">BUY</a></div>
+<div class="item"><span>400 SBC - Rp8.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin.%20saya%20ingin%20membeli%20400%20SBC">BUY</a></div>
+<div class="item"><span>500 SBC - Rp10.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin.%20saya%20ingin%20membeli%20500%20SBC">BUY</a></div>
+<div class="item"><span>600 SBC - Rp12.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin.%20saya%20ingin%20membeli%20600%20SBC">BUY</a></div>
+<div class="item"><span>700 SBC - Rp14.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin.%20saya%20ingin%20membeli%20700%20SBC">BUY</a></div>
+<div class="item"><span>800 SBC - Rp16.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin.%20saya%20ingin%20membeli%20800%20SBC">BUY</a></div>
+<div class="item"><span>900 SBC - Rp18.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin.%20saya%20ingin%20membeli%20900%20SBC">BUY</a></div>
+<div class="item"><span>1000 SBC - Rp20.000</span><a class="buy" href="https://wa.me/6281949525946?text=Halo%20Admin.%20saya%20ingin%20membeli%201000%20SBC">BUY</a></div>
+</div>
+<div class="card" id="review">
+<h2 class="title">TESTIMONI</h2>
+<div id="reviews"></div>
+<input id="name" placeholder="Nama">
+<textarea id="text" placeholder="Tulis ulasan"></textarea>
+<button onclick="addReview()">Kirim Ulasan</button>
+<p style="margin-top:10px">Ulasan tersimpan di browser. Untuk ulasan global semua orang, tambahkan Firebase.</p>
+</div>
+
+<div class="card" id="discord">
+<h2 class="title">DISCORD SERVER</h2>
+<p>Gabung untuk update script terbaru.</p><br>
+<a class="buy" href="https://discord.gg/jjsxUvVCK">JOIN SERVER</a>
+</div>
+</div>
+
+<footer>© 2026 LENGER STORE ULTIMATE</footer>
+</div>
+
+<script>
+setTimeout(()=>loader.style.display='none',1500);
+document.body.addEventListener('click',()=>music.play(),{once:true});
+
+if(localStorage.getItem('logged')==='yes'){
+auth.style.display='none'; main.style.display='block';
+}
+
+function register(){
+localStorage.setItem('acc',JSON.stringify({u:user.value,p:pass.value}));
+msg.innerText='Register berhasil';
+}
+function login(){
+let a=JSON.parse(localStorage.getItem('acc')||'{}');
+if(user.value===a.u && pass.value===a.p){
+localStorage.setItem('logged','yes');
+location.reload();
+}else msg.innerText='Login gagal';
+}
+
+let data=JSON.parse(localStorage.getItem('reviews')||'[]');
+function render(){
+document.getElementById('reviews').innerHTML=data.map(r=>`<div class="review"><b>${r.n}</b><br>${r.t}</div>`).join('');
+}
+function addReview(){
+if(!name.value||!text.value)return;
+data.unshift({n:name.value,t:text.value});
+localStorage.setItem('reviews',JSON.stringify(data));
+name.value=''; text.value='';
+render();
+}
+render();
+</script>
+
+<script>
+const canvas=document.getElementById('particles');
+if(canvas){
+const ctx=canvas.getContext('2d');
+function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}
+resize();window.addEventListener('resize',resize);
+let p=[];for(let i=0;i<120;i++){p.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,s:Math.random()*3+1,dx:(Math.random()-.5)*1.5,dy:(Math.random()-.5)*1.5});}
+(function anim(){ctx.clearRect(0,0,canvas.width,canvas.height);
+p.forEach(a=>{a.x+=a.dx;a.y+=a.dy;if(a.x<0||a.x>canvas.width)a.dx*=-1;if(a.y<0||a.y>canvas.height)a.dy*=-1;ctx.beginPath();ctx.arc(a.x,a.y,a.s,0,Math.PI*2);ctx.fillStyle='#00aaff';ctx.shadowBlur=20;ctx.shadowColor='#00aaff';ctx.fill();});
+requestAnimationFrame(anim);})();
+}
+</script>
+
+</body></html>
